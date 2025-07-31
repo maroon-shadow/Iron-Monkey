@@ -8,7 +8,8 @@ namespace Iron_Monkey
     {
         bool on = true;
         bool T = false;
-        float speed = 10f;
+        float speedL = 10f;
+        float speedR = 10f;
         public float cooldownTime = 0.3f;
         private float nextAllowedTime = 0f;
         public void FixedUpdate()
@@ -22,28 +23,28 @@ namespace Iron_Monkey
                 }
                 if (ControllerInputPoller.instance.leftControllerGripFloat > 0.5f && T)
                 {
-                    GorillaTagger.Instance.rigidbody.AddForce(speed * -GorillaTagger.Instance.leftHandTransform.right, (ForceMode)5);
-                    GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 25f * GorillaTagger.Instance.rigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
+                    GorillaTagger.Instance.rigidbody.AddForce(speedL * -GorillaTagger.Instance.leftHandTransform.right, (ForceMode)5);
+                    GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 15f * GorillaTagger.Instance.rigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
                     if (ControllerInputPoller.instance.rightControllerIndexFloat > 0.5f)
                     {
-                        speed = 25f;
+                        speedL = 25f;
                     }
                     else
                     {
-                        speed = 10f;
+                        speedL = 10f;
                     }
                 }
                 if (ControllerInputPoller.instance.rightControllerGripFloat > 0.5f && T)
                 {
-                    GorillaTagger.Instance.rigidbody.AddForce(speed * GorillaTagger.Instance.rightHandTransform.right, (ForceMode)5);
-                    GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / 25f * GorillaTagger.Instance.rigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
+                    GorillaTagger.Instance.rigidbody.AddForce(speedR * GorillaTagger.Instance.rightHandTransform.right, (ForceMode)5);
+                    GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / 15f * GorillaTagger.Instance.rigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
                     if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.5f)
                     {
-                        speed = 25f;
+                        speedR = 25f;
                     }
                     else
                     {
-                        speed = 10f;
+                        speedR = 10f;
                     }
                 }
             }
