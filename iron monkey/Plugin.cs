@@ -27,7 +27,7 @@ namespace Iron_Monkey
                     GorillaTagger.Instance.StartVibration(true, GorillaTagger.Instance.tapHapticStrength / 15f * GorillaTagger.Instance.rigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
                     if (ControllerInputPoller.instance.leftControllerIndexFloat > 0.5f)
                     {
-                        speedL = 25f;
+                        speedL = 17f;
                     }
                     else
                     {
@@ -40,7 +40,7 @@ namespace Iron_Monkey
                     GorillaTagger.Instance.StartVibration(false, GorillaTagger.Instance.tapHapticStrength / 15f * GorillaTagger.Instance.rigidbody.velocity.magnitude, GorillaTagger.Instance.tapHapticDuration);
                     if (ControllerInputPoller.instance.rightControllerIndexFloat > 0.5f)
                     {
-                        speedR = 25f;
+                        speedR = 17f;
                     }
                     else
                     {
